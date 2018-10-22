@@ -7,13 +7,18 @@ import { catchError, map, tap } from 'rxjs/operators';
     providedIn: 'root'
 })
 export class OrgsService {
-
+    baseUrl = 'https://vsm-sb.herokuapp.com/';
     constructor(
         private http: HttpClient
     ) { }
 
     getOrgs() {
-        const url = 'https://vsm-sb.herokuapp.com/api/v1/orgs';
+        const url = this.baseUrl + 'api/v1/orgs';
         return this.http.get(url);
+    }
+
+    addOrg(payload) {
+        const url = this.baseUrl + 'api/v1/org';
+        return this.http.post(url, payload);
     }
 }
