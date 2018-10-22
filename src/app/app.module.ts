@@ -6,11 +6,12 @@ import { AppComponent } from './app.component';
 import { FormsModule }    from '@angular/forms';
 import { OrgListModule } from './modules/org-list/org-list.module';
 import { SharedModule } from './modules/shared/shared.module';
+import { DepartmentListModule } from './modules/department-list/department-list.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -18,7 +19,8 @@ import { SharedModule } from './modules/shared/shared.module';
     HttpClientModule,
     FormsModule,
     OrgListModule,
-    SharedModule
+    SharedModule,
+    DepartmentListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
