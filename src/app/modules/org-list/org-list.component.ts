@@ -9,15 +9,30 @@ import { OrgsService } from '../../services/orgs.service';
 export class OrgListComponent implements OnInit {
 
   orgs;
+  isCreate = false;
+  orgName;
+  scope;
   constructor(private orgsService: OrgsService) { }
 
   ngOnInit() {
     this.orgsService.getOrgs().subscribe(data => {this.orgs = data});
   }
 
-}
+  openCreate() {
+    this.isCreate = true;
+  }
 
-export class Org {
-  orgName: string;
-  scope: string;
+  onSave() {
+    this.clearCreate(); 
+  }
+
+  onCancel() {
+    this.clearCreate();
+  }
+
+  clearCreate() {
+    this.isCreate = false;
+    this.orgName = '';
+    this.scope = '';
+  }
 }

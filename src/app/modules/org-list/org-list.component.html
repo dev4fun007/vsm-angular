@@ -1,4 +1,19 @@
 <app-header [name]="'Organizations'"></app-header>
 <div class="mainContainer">
+  <div class="addTile" *ngIf="!isCreate" (click)="openCreate()">
+    <div class="addText">Add</div>
+  </div>
+  <div class="createOrg" *ngIf="isCreate">
+    <div>
+      <input [(ngModel)]="orgName" placeholder="Org Name" />
+    </div>
+    <div>
+      <input [(ngModel)]="scope" placeholder="Scope" />
+    </div>
+    <div>
+      <button class="btn save" (click)="onSave()">Save</button>
+      <button class="btn cancel" (click)="onCancel()">Cancel</button>
+    </div>
+  </div>
   <app-tile-list [list]="orgs"></app-tile-list>
 </div>

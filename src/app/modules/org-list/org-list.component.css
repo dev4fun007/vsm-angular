@@ -3,4 +3,78 @@
     max-width: 1200px;
     margin: auto;
     margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.addTile {
+    height: 40px;
+    width: 50px;
+    margin: auto;
+    outline: none;
+    background-color: white;
+    border: 1px solid #e9ebec;
+    border-radius: 3px;
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.addTile:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 2px gray;
+}
+
+.addText {
+    font-family: "72-Light";
+    font-size: 16px;
+    text-align: center;
+    color: #3f5060;
+}
+
+.createOrg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.createOrg > div {
+    margin: 5px 0; 
+}
+
+.createOrg input {
+    width: 300px;
+    height: 30px;
+    font-size: 20px;
+    font-family: "72-Light";
+    border-radius: 2px;
+    border: 1px solid #e9ebec;
+    color: #3f5060;
+}
+
+::placeholder {
+    color: #e9ebec;
+    font-style: italic;
+    text-align: center;
+}
+
+.btn {
+    font-size: 14px;
+    border-radius: 4px;
+    padding: 5px 10px;
+    outline: none;
+    border: 1px solid #5496cd;
+    font-family: "72-Regular";
+    margin: 0 10px;
+}
+
+.save {
+    background: #5496cd;
+    color: white;
+}
+
+.cancel {
+    background: white;
+    color: #5496cd;
 }
