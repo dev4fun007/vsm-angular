@@ -8,6 +8,7 @@ import { OrgsService } from '../../services/orgs.service';
 })
 export class OrgListComponent implements OnInit {
 
+  title = 'Orgs';
   orgs;
   isCreate = false;
   orgName;
