@@ -19,11 +19,10 @@ export class DepartmentListComponent implements OnInit {
   ngOnInit() {
     
     this.route.queryParams.subscribe(params => {
-          this.orgName = params.orgName;
+          this.orgName = params.org;
           this.scope = params.scope;
+          this.deptService.getOrgsDepartment(this.orgName, this.scope).subscribe(data => {this.department = data});
     });
-
-    this.deptService.getOrgsDepartment(this.orgName, this.scope).subscribe(data => {this.department = data});
 
   }
 
