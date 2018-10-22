@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrgsService } from '../../services/orgs.service';
+import { MatSnackBarConfig, MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-org-list',
@@ -13,7 +14,7 @@ export class OrgListComponent implements OnInit {
   isCreate = false;
   orgName;
   scope;
-  constructor(private orgsService: OrgsService) { }
+  constructor(private orgsService: OrgsService, private snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.orgsService.getOrgs().subscribe(data => {this.orgs = data});
@@ -24,7 +25,21 @@ export class OrgListComponent implements OnInit {
   }
 
   onSave() {
-    this.clearCreate(); 
+    if (this.orgName && this.scope) {
+    const payload = {
+      'orgName': this.orgName,
+      'scope': this.scope
+    };
+    this.orgsService.addOrg(payload).subscribe(
+      data => {
+        this.clearCreate();
+        this.openSnackBar('Organization added successfully!!');
+      }
+    ); 
+    }
+    else {
+      this.openSnackBar('Please add both the fields');
+    }
   }
 
   onCancel() {
@@ -35,5 +50,15 @@ export class OrgListComponent implements OnInit {
     this.isCreate = false;
     this.orgName = '';
     this.scope = '';
+  }
+
+  openSnackBar(msg) {
+    // const config = new MatSnackBarConfig();
+    // config.verticalPosition = 'bottom';
+    // config.duration = 2000;
+    // config.extraClasses = ['messageToast'];
+    this.snackBar.open(msg, null, {
+      duration: 2000
+    });
   }
 }

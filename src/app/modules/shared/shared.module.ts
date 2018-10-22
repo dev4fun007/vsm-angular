@@ -5,11 +5,13 @@ import { TileListComponent } from './components/tile-list/tile-list.component';
 import { TileComponent } from './components/tile/tile.component';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material';
 
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule
+        RouterModule,
+        MatSnackBarModule
     ],
     declarations: [
         TileListComponent,
