@@ -13,7 +13,7 @@ export class OrgsService {
     ) { }
 
     getOrgs() {
-        const url = 'orgs';
+        const url = 'api/v1/orgs';
         return this.http.get(url);
     }
 }
