@@ -13,7 +13,7 @@ export class OrgsService {
     ) { }
 
     getOrgs() {
-        const url = 'api/v1/orgs';
+        const url = 'https://vsm-sb.herokuapp.com/api/v1/orgs';
         return this.http.get(url);
     }
 }
