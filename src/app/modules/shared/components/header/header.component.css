@@ -1,0 +1,14 @@
+.header {
+    background-color: #415e78;
+    border: 1px solid #415e78;
+    height: 120px;
+    width: 100%;
+}
+
+.headerName {
+    text-align: center;
+    color: white;
+    font-family: "72-Regular";
+    margin-top: 32px;
+    font-size: 40px;
+}

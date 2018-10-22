@@ -4,6 +4,7 @@ import { ModuleWithProviders } from '@angular/core';
 import { TileListComponent } from './components/tile-list/tile-list.component';
 import { TileComponent } from './components/tile/tile.component';
 import { RouterModule } from '@angular/router';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
     imports: [
@@ -12,11 +13,13 @@ import { RouterModule } from '@angular/router';
     ],
     declarations: [
         TileListComponent,
-        TileComponent
+        TileComponent,
+        HeaderComponent
     ],
     exports: [
         TileListComponent,
-        TileComponent
+        TileComponent,
+        HeaderComponent
     ],
     providers: []
 })
