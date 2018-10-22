@@ -24,4 +24,15 @@
     margin: auto;
     color: #346187;
     text-align: center;
+    margin-top: 20px;
+}
+
+.scope {
+    font-family: "72-Light";
+    word-break: break-word;
+    font-size: 20px;
+    margin: auto;
+    color: #9ca4ac;
+    text-align: center;
+    margin-top: 40px;
 }

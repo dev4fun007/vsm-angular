@@ -25,3 +25,7 @@
     font-weight: 200;
     src: url("/assets/fonts/72-Light.eot?") format("eot"), url("/assets/fonts/72-Light.woff2") format("woff2"), url("/assets/fonts/72-Light.woff") format("woff");
 }
+
+body {
+    margin: 0px;
+}

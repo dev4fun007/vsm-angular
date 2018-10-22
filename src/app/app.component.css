@@ -1,0 +1,16 @@
+.appHeader {
+    background-color: #415e78;
+    border: 1px solid #415e78;
+    height: 100px;
+    width: 100%;
+}
+
+.appFooter {
+    background: linear-gradient(#415e78, #6687a3);
+    height: 100px;
+    width: 100%;
+}
+
+.appContent {
+    min-height: 80vh;
+}
