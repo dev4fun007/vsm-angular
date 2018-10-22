@@ -22,6 +22,7 @@ export class DepartmentListComponent implements OnInit {
           this.orgName = params.org;
           this.scope = params.scope;
           this.deptService.getOrgsDepartment(this.orgName, this.scope).subscribe(data => {this.department = data});
+          console.log("Department: "+this.department);          
     });
 
   }
