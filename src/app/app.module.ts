@@ -15,12 +15,11 @@ import { DepartmentListModule } from './modules/department-list/department-list.
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
     FormsModule,
     OrgListModule,
     SharedModule,
-    DepartmentListModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

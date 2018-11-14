@@ -21,7 +21,7 @@ export class DepartmentListComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
           this.orgName = params.org;
           this.scope = params.scope;
-          this.deptService.getOrgsDepartment(this.orgName, this.scope).subscribe(data => {this.department = data});
+          this.deptService.getOrgsDepartment(this.orgName, this.scope).subscribe(data => {this.department = data[0]});
           console.log("Department: "+this.department);          
     });
 

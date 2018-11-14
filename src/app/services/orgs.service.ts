@@ -1,24 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable({
     providedIn: 'root'
 })
 export class OrgsService {
-    baseUrl = 'https://vsm-sb.herokuapp.com/';
+    apiPrefix = 'api/v1/';
+    step = 'step1/';
+    mainUrl = environment.baseUrl + this.apiPrefix + this.step;
     constructor(
         private http: HttpClient
     ) { }
 
     getOrgs() {
-        const url = this.baseUrl + 'api/v1/orgs';
+        const url = this.mainUrl + 'orgs';
         return this.http.get(url);
     }
 
     addOrg(payload) {
-        const url = this.baseUrl + 'api/v1/org';
+        const url = this.mainUrl + 'org';
         return this.http.post(url, payload);
     }
 }

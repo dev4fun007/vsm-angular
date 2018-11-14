@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { OrgListComponent } from './modules/org-list/org-list.component';
-import { DepartmentListComponent } from './modules/department-list/department-list.component';
 
 
 const routes: Routes = [
@@ -9,7 +8,7 @@ const routes: Routes = [
     path: '', component: OrgListComponent,    
   },
   {
-    path: 'department', component: DepartmentListComponent,
+    path: 'department', loadChildren: './modules/department-list/department-list.module#DepartmentListModule',
   }
 ];
 
