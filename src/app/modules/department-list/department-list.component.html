@@ -1,11 +1,24 @@
 <div class="mainContainer">
-  
-  <div>Org: {{orgName}}</div>
-  <div>Scope: {{scope}}</div>
-  <div>Out Of Scope Supplier: {{department?.outOfScopeSupplier}}</div>
-  <div>Out Of Scope Customer: {{department?.outOfScopeCustomer}}</div>
-  <div>Utilization: {{department?.utilizationRate}}</div>
-  <div>Date Updated: {{department?.dateUpdated}}</div>
-
+  <div class="header">
+    <div class="orgName">{{orgName}}</div>
+    <div class="scope">{{scope}}</div>
+  </div>
+  <div class="details">
+    <div>Out Of Scope Supplier:
+      <span>{{department?.outOfScopeSupplier}}</span>
+    </div>
+    <div>Out Of Scope Customer:
+      <span>{{department?.outOfScopeCustomer}}</span>
+    </div>
+  </div>
+  <div class="details">
+    <div>Utilization:
+      <span>{{department?.utilizationRate}}</span></div>
+    <div>Date Updated:
+      <span>{{department?.dateUpdated}}</span></div>
+  </div>
+  <div class="tiles">
+    <app-tile-list [list]="department?.departments"></app-tile-list>
+  </div>
 
 </div>

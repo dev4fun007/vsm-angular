@@ -6,6 +6,7 @@ import { TileComponent } from './components/tile/tile.component';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material';
+import { TileDataPipe } from './pipes/tile-data.pipe';
 
 @NgModule({
     imports: [
@@ -16,7 +17,8 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material';
     declarations: [
         TileListComponent,
         TileComponent,
-        HeaderComponent
+        HeaderComponent,
+        TileDataPipe
     ],
     exports: [
         TileListComponent,

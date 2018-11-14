@@ -1,4 +1,4 @@
-<div class="tile" (click)="navigateToDepartmentPage(data)">
-  <div class="title">{{data.orgName}}</div>
-  <div class="scope">{{data.scope}}</div>
+<div *ngIf="data | tileData"  class="tile" (click)="navigateToDepartmentPage(data)">
+  <div class="title">{{data.heading1}}</div>
+  <div class="scope">{{data.heading2}}</div>
 </div>
