@@ -13,9 +13,4 @@ export class TileComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  navigateToDepartmentPage(data) {
-    this.router.navigateByUrl('/department?org=' + data.orgName + '&scope=' + data.scope);
-  }
-
 }

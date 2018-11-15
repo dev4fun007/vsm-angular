@@ -13,4 +13,10 @@ export class TileListComponent implements OnInit {
   ngOnInit() {
   }
 
+  navigate(data) {
+    if (this.list && this.list.callback && typeof(this.list.callback) === "function") {
+      this.list.callback(data);
+    }
+  }
+
 }

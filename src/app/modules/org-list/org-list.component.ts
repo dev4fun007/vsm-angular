@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrgsService } from '../../services/orgs.service';
 import { MatSnackBarConfig, MatSnackBar } from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-org-list',
@@ -14,10 +15,14 @@ export class OrgListComponent implements OnInit {
   isCreate = false;
   orgName;
   scope;
-  constructor(private orgsService: OrgsService, private snackBar: MatSnackBar) { }
+  constructor(private orgsService: OrgsService,private router: Router ,private snackBar: MatSnackBar) { }
 
   ngOnInit() {
-    this.orgsService.getOrgs().subscribe(data => {this.orgs = data});
+    let callback = this.navigateToDepartmentPage.bind(this);
+    this.orgsService.getOrgs().subscribe(data => {
+      this.orgs = data;
+      this.orgs.callback = callback;
+    });
   }
 
   openCreate() {
@@ -60,5 +65,9 @@ export class OrgListComponent implements OnInit {
     this.snackBar.open(msg, null, {
       duration: 2000
     });
+  }
+
+  navigateToDepartmentPage(data) {
+    this.router.navigateByUrl('/department?org=' + data.orgName + '&scope=' + data.scope);
   }
 }

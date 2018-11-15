@@ -1,5 +1,5 @@
 <div class="tileList">
   <div *ngFor="let data of list">
-    <app-tile [data]="data"></app-tile>
+    <app-tile [data]="data" (click)="navigate(data)"></app-tile>
   </div>
 </div>
